@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourseManageModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,22 @@ namespace CourseMgtPage1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+
+            //show login window first:
+            FrmCover frmlogin = new FrmCover();
+            DialogResult result = frmlogin.ShowDialog();
+
+            //by return value of showdialog result, main window can be hiden or shown
+            if (result == DialogResult.OK)
+            {
+                Application.Run(new frmMain());
+            }
+            else
+            {
+                Application.Exit();
+            }           
         }
+
+        public static Teacher currentTeacher = null;
     }
 }

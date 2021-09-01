@@ -32,7 +32,7 @@ namespace CourseMgtPage1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblLoginClient = new System.Windows.Forms.Label();
             this.lblWebsite = new System.Windows.Forms.Label();
             this.lblSystem = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
@@ -50,7 +50,7 @@ namespace CourseMgtPage1
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(63)))), ((int)(((byte)(133)))));
             this.pnlTop.Controls.Add(this.btnClose);
-            this.pnlTop.Controls.Add(this.label1);
+            this.pnlTop.Controls.Add(this.lblLoginClient);
             this.pnlTop.Controls.Add(this.lblWebsite);
             this.pnlTop.Controls.Add(this.lblSystem);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -58,6 +58,9 @@ namespace CourseMgtPage1
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(920, 66);
             this.pnlTop.TabIndex = 0;
+            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_MouseDown);
+            this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Frm_MouseMove);
+            this.pnlTop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Frm_MouseUp);
             // 
             // btnClose
             // 
@@ -77,16 +80,16 @@ namespace CourseMgtPage1
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label1
+            // lblLoginClient
             // 
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(770, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Prof. Chang   ";
+            this.lblLoginClient.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblLoginClient.Image = ((System.Drawing.Image)(resources.GetObject("lblLoginClient.Image")));
+            this.lblLoginClient.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblLoginClient.Location = new System.Drawing.Point(770, 31);
+            this.lblLoginClient.Name = "lblLoginClient";
+            this.lblLoginClient.Size = new System.Drawing.Size(100, 23);
+            this.lblLoginClient.TabIndex = 2;
+            this.lblLoginClient.Text = "User";
             // 
             // lblWebsite
             // 
@@ -246,7 +249,7 @@ namespace CourseMgtPage1
         private System.Windows.Forms.MonthCalendar mclCalendar;
         private System.Windows.Forms.Panel pnlRight;
         private System.Windows.Forms.Label lblWebsite;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLoginClient;
         private System.Windows.Forms.Button btnClose;
     }
 }

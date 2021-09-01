@@ -14,7 +14,9 @@ namespace CourseMgtPage1
     {
         public frmMain()
         {
+            
             InitializeComponent();
+           this.lblLoginClient.Text = Program.currentTeacher.TeacherName;
         }
 
         #region Window Move by left mouse button draging
