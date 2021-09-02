@@ -16,7 +16,7 @@ namespace CourseMgtPage1
         {
             
             InitializeComponent();
-           this.lblLoginClient.Text = Program.currentTeacher.TeacherName;
+            this.lblLoginClient.Text = Program.currentTeacher.TeacherName;
         }
 
         #region Window Move by left mouse button draging

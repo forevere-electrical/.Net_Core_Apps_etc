@@ -18,12 +18,19 @@ namespace CourseManageDAL
         /// <summary>
         ///  insert, update, delete queries
         /// </summary>
-        /// <param name="sql"></param>
+        /// <param name="sql">sql query sentence</param>
+        /// <param name="param">Array of parameters</param>
         /// <returns>rows being affected</returns>
-        public static int Update(string sql)
+        public static int Update(string sql, SqlParameter[] param=null)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
+            //added parameter defult value and check if it's null. 
+            // if not , put param value into cmd
+            if (param != null)
+            {
+                cmd.Parameters.AddRange(param);
+            }
             try
             {
                 conn.Open();
