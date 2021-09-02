@@ -17,5 +17,8 @@ namespace CourseManageModels
         public int Credit { get; set; }
         public int CategoryId { get; set; }
         public int TeacherId { get; set; }
+
+        // extended property
+        public string CategoryName { get; set; }
     }
 }

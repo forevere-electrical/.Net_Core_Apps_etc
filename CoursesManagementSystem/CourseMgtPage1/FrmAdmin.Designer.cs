@@ -66,6 +66,7 @@ namespace CourseMgtPage1
             this.txtAdminAccount.Name = "txtAdminAccount";
             this.txtAdminAccount.Size = new System.Drawing.Size(134, 22);
             this.txtAdminAccount.TabIndex = 0;
+            this.txtAdminAccount.Text = "ZHANG10000";
             // 
             // txtPassword
             // 
@@ -74,6 +75,7 @@ namespace CourseMgtPage1
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(134, 22);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "PWD10000";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // checkBox1

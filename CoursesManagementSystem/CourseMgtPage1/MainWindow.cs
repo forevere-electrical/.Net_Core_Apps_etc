@@ -98,5 +98,7 @@ namespace CourseMgtPage1
             newPassword.Parent = this.pnlRight;
             newPassword.Show();
         }
+
+     
     }
 }

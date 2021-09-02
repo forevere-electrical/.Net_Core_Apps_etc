@@ -40,26 +40,26 @@ namespace CourseMgtPage1
             this.lblAdded = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.gpbCourseInfo = new System.Windows.Forms.GroupBox();
-            this.lblBar = new System.Windows.Forms.Label();
-            this.ckbAutoClear = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbbCategory = new System.Windows.Forms.ComboBox();
-            this.txtCourseName = new System.Windows.Forms.TextBox();
-            this.txtClassHours = new System.Windows.Forms.TextBox();
             this.txtCredit = new System.Windows.Forms.TextBox();
+            this.txtClassHours = new System.Windows.Forms.TextBox();
             this.txtCourseContent = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCourseName = new System.Windows.Forms.TextBox();
+            this.cbbCategory = new System.Windows.Forms.ComboBox();
+            this.ckbAutoClear = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblBar = new System.Windows.Forms.Label();
+            this.dvgAddCourse = new System.Windows.Forms.DataGridView();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbCourseInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgAddCourse)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -92,6 +92,7 @@ namespace CourseMgtPage1
             this.btnSaveToDB.Text = "Add to DB";
             this.btnSaveToDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaveToDB.UseVisualStyleBackColor = false;
+            this.btnSaveToDB.Click += new System.EventHandler(this.btnSaveToDB_Click);
             // 
             // lblAddCourse
             // 
@@ -149,13 +150,45 @@ namespace CourseMgtPage1
             this.gpbCourseInfo.TabStop = false;
             this.gpbCourseInfo.Text = "[Course Infomation]";
             // 
-            // lblBar
+            // txtCredit
             // 
-            this.lblBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblBar.Location = new System.Drawing.Point(0, 55);
-            this.lblBar.Name = "lblBar";
-            this.lblBar.Size = new System.Drawing.Size(690, 1);
-            this.lblBar.TabIndex = 4;
+            this.txtCredit.Location = new System.Drawing.Point(515, 30);
+            this.txtCredit.Name = "txtCredit";
+            this.txtCredit.Size = new System.Drawing.Size(121, 22);
+            this.txtCredit.TabIndex = 6;
+            this.txtCredit.Text = "20";
+            // 
+            // txtClassHours
+            // 
+            this.txtClassHours.Location = new System.Drawing.Point(306, 30);
+            this.txtClassHours.Name = "txtClassHours";
+            this.txtClassHours.Size = new System.Drawing.Size(56, 22);
+            this.txtClassHours.TabIndex = 6;
+            this.txtClassHours.Text = "55";
+            // 
+            // txtCourseContent
+            // 
+            this.txtCourseContent.Location = new System.Drawing.Point(145, 59);
+            this.txtCourseContent.Name = "txtCourseContent";
+            this.txtCourseContent.Size = new System.Drawing.Size(217, 22);
+            this.txtCourseContent.TabIndex = 6;
+            this.txtCourseContent.Text = "Java Program from 0 to full stack";
+            // 
+            // txtCourseName
+            // 
+            this.txtCourseName.Location = new System.Drawing.Point(111, 30);
+            this.txtCourseName.Name = "txtCourseName";
+            this.txtCourseName.Size = new System.Drawing.Size(84, 22);
+            this.txtCourseName.TabIndex = 6;
+            this.txtCourseName.Text = "Java Progamming";
+            // 
+            // cbbCategory
+            // 
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.Location = new System.Drawing.Point(515, 59);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(121, 24);
+            this.cbbCategory.TabIndex = 5;
             // 
             // ckbAutoClear
             // 
@@ -167,32 +200,14 @@ namespace CourseMgtPage1
             this.ckbAutoClear.Text = "Auto Clear Text After Adding";
             this.ckbAutoClear.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Course Name:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Course Description:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(201, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Course Hours:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(391, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 17);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Course Category:";
             // 
             // label4
             // 
@@ -203,59 +218,47 @@ namespace CourseMgtPage1
             this.label4.TabIndex = 4;
             this.label4.Text = "Course Credit:";
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(391, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Course Category:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(201, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Course Hours:";
             // 
-            // cbbCategory
+            // label2
             // 
-            this.cbbCategory.FormattingEnabled = true;
-            this.cbbCategory.Location = new System.Drawing.Point(515, 59);
-            this.cbbCategory.Name = "cbbCategory";
-            this.cbbCategory.Size = new System.Drawing.Size(121, 24);
-            this.cbbCategory.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Course Description:";
             // 
-            // txtCourseName
+            // label1
             // 
-            this.txtCourseName.Location = new System.Drawing.Point(111, 30);
-            this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.Size = new System.Drawing.Size(84, 22);
-            this.txtCourseName.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Course Name:";
             // 
-            // txtClassHours
+            // lblBar
             // 
-            this.txtClassHours.Location = new System.Drawing.Point(306, 30);
-            this.txtClassHours.Name = "txtClassHours";
-            this.txtClassHours.Size = new System.Drawing.Size(56, 22);
-            this.txtClassHours.TabIndex = 6;
+            this.lblBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBar.Location = new System.Drawing.Point(0, 55);
+            this.lblBar.Name = "lblBar";
+            this.lblBar.Size = new System.Drawing.Size(690, 1);
+            this.lblBar.TabIndex = 4;
             // 
-            // txtCredit
+            // dvgAddCourse
             // 
-            this.txtCredit.Location = new System.Drawing.Point(515, 30);
-            this.txtCredit.Name = "txtCredit";
-            this.txtCredit.Size = new System.Drawing.Size(121, 22);
-            this.txtCredit.TabIndex = 6;
-          
-            // 
-            // txtCourseContent
-            // 
-            this.txtCourseContent.Location = new System.Drawing.Point(145, 59);
-            this.txtCourseContent.Name = "txtCourseContent";
-            this.txtCourseContent.Size = new System.Drawing.Size(217, 22);
-            this.txtCourseContent.TabIndex = 6;
-           
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dvgAddCourse.AllowUserToAddRows = false;
+            this.dvgAddCourse.AllowUserToDeleteRows = false;
+            this.dvgAddCourse.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dvgAddCourse.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,19 +266,19 @@ namespace CourseMgtPage1
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
+            this.dvgAddCourse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dvgAddCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgAddCourse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CourseName,
+            this.CourseHours,
+            this.Credit,
             this.Column4,
-            this.Column5});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 165);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.CategoryName});
+            this.dvgAddCourse.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dvgAddCourse.Location = new System.Drawing.Point(5, 165);
+            this.dvgAddCourse.Name = "dvgAddCourse";
+            this.dvgAddCourse.ReadOnly = true;
+            this.dvgAddCourse.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,58 +286,63 @@ namespace CourseMgtPage1
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dvgAddCourse.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dvgAddCourse.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridView1.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 250);
-            this.dataGridView1.TabIndex = 9;
+            this.dvgAddCourse.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dvgAddCourse.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dvgAddCourse.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dvgAddCourse.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgAddCourse.RowTemplate.Height = 24;
+            this.dvgAddCourse.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgAddCourse.Size = new System.Drawing.Size(662, 250);
+            this.dvgAddCourse.TabIndex = 9;
             // 
-            // Column1
+            // CourseName
             // 
-            this.Column1.HeaderText = "Course Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
+            this.CourseName.DataPropertyName = "CourseName";
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.MinimumWidth = 6;
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
+            this.CourseName.Width = 125;
             // 
-            // Column2
+            // CourseHours
             // 
-            this.Column2.HeaderText = "Course Hours";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
+            this.CourseHours.DataPropertyName = "CourseHours";
+            this.CourseHours.HeaderText = "Course Hours";
+            this.CourseHours.MinimumWidth = 6;
+            this.CourseHours.Name = "CourseHours";
+            this.CourseHours.ReadOnly = true;
+            this.CourseHours.Width = 125;
             // 
-            // Column3
+            // Credit
             // 
-            this.Column3.HeaderText = "Course Credit";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
+            this.Credit.DataPropertyName = "Credit";
+            this.Credit.HeaderText = "Course Credit";
+            this.Credit.MinimumWidth = 6;
+            this.Credit.Name = "Credit";
+            this.Credit.ReadOnly = true;
+            this.Credit.Width = 125;
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "CourseContent";
             this.Column4.HeaderText = "Course Description";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
             // 
-            // Column5
+            // CategoryName
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column5.HeaderText = "Course Category";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 143;
+            this.CategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "Course Category";
+            this.CategoryName.MinimumWidth = 6;
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
+            this.CategoryName.Width = 131;
             // 
             // FrmAddCourse
             // 
@@ -342,7 +350,7 @@ namespace CourseMgtPage1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(672, 423);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dvgAddCourse);
             this.Controls.Add(this.gpbCourseInfo);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSaveToDB);
@@ -356,7 +364,7 @@ namespace CourseMgtPage1
             this.Text = "FrmAddCourse";
             this.gpbCourseInfo.ResumeLayout(false);
             this.gpbCourseInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgAddCourse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,11 +391,11 @@ namespace CourseMgtPage1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblBar;
         private System.Windows.Forms.TextBox txtCourseContent;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridView dvgAddCourse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseHours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
     }
 }

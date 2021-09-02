@@ -18,8 +18,8 @@ namespace CourseManageDAL
         public int AddCourse(Course course)
         {
             //1. complete query sql with @parameters:
-            string sql = "insert into Course (CourseName, CourseContent, CourseHours, Credit, CategoryId, TeacherId";
-            sql += " values (@CourseName, @CourseContent, @CourseHours, @Credit, @CategoryId, @TeacherId";
+            string sql = "insert into Course (CourseName, CourseContent, CourseHours, Credit, CategoryId, TeacherId)";
+            sql += " values (@CourseName, @CourseContent, @CourseHours, @Credit, @CategoryId, @TeacherId)";
 
             //2. connect Parameters array to @parameters
             SqlParameter[] param = new SqlParameter[]

@@ -10,7 +10,7 @@ namespace CourseManageBLL
 {
     public class CourseManage
     {
-        public CourseService courseService = new CourseService();
+        private CourseService courseService = new CourseService();
         public int AddCourse(Course course)
         {
             return courseService.AddCourse(course);

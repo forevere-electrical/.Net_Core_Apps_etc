@@ -8,7 +8,7 @@ namespace CourseManageModels
 {
     [Serializable]
 
-    public class CourseCategory
+    public class Course_Category
     {
         public int Course_Category_Id { get; set; }
         public string Course_Category_Name { get; set; }

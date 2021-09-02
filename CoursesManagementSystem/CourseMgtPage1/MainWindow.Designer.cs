@@ -90,6 +90,7 @@ namespace CourseMgtPage1
             this.lblLoginClient.Size = new System.Drawing.Size(100, 23);
             this.lblLoginClient.TabIndex = 2;
             this.lblLoginClient.Text = "User";
+           
             // 
             // lblWebsite
             // 
