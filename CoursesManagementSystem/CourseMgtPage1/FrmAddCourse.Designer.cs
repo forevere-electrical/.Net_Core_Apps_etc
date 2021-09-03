@@ -56,8 +56,8 @@ namespace CourseMgtPage1
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbCourseInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgAddCourse)).BeginInit();
             this.SuspendLayout();
@@ -272,8 +272,8 @@ namespace CourseMgtPage1
             this.CourseName,
             this.CourseHours,
             this.Credit,
-            this.Column4,
-            this.CategoryName});
+            this.CourseContent,
+            this.CategoryId});
             this.dvgAddCourse.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dvgAddCourse.Location = new System.Drawing.Point(5, 165);
             this.dvgAddCourse.Name = "dvgAddCourse";
@@ -325,24 +325,24 @@ namespace CourseMgtPage1
             this.Credit.ReadOnly = true;
             this.Credit.Width = 125;
             // 
-            // Column4
+            // CourseContent
             // 
-            this.Column4.DataPropertyName = "CourseContent";
-            this.Column4.HeaderText = "Course Description";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
+            this.CourseContent.DataPropertyName = "CourseContent";
+            this.CourseContent.HeaderText = "Course Description";
+            this.CourseContent.MinimumWidth = 6;
+            this.CourseContent.Name = "CourseContent";
+            this.CourseContent.ReadOnly = true;
+            this.CourseContent.Width = 125;
             // 
-            // CategoryName
+            // CategoryId
             // 
-            this.CategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.CategoryName.DataPropertyName = "CategoryName";
-            this.CategoryName.HeaderText = "Course Category";
-            this.CategoryName.MinimumWidth = 6;
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
-            this.CategoryName.Width = 131;
+            this.CategoryId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.CategoryId.DataPropertyName = "CategoryId";
+            this.CategoryId.HeaderText = "Course Category";
+            this.CategoryId.MinimumWidth = 6;
+            this.CategoryId.Name = "CategoryId";
+            this.CategoryId.ReadOnly = true;
+            this.CategoryId.Width = 131;
             // 
             // FrmAddCourse
             // 
@@ -395,7 +395,7 @@ namespace CourseMgtPage1
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseHours;
         private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseContent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryId;
     }
 }

@@ -20,5 +20,6 @@ namespace CourseManageModels
 
         // extended property
         public string CategoryName { get; set; }
+        public string TeacherName { get; set; }
     }
 }
