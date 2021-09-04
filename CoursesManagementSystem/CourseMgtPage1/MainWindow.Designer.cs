@@ -90,7 +90,6 @@ namespace CourseMgtPage1
             this.lblLoginClient.Size = new System.Drawing.Size(100, 23);
             this.lblLoginClient.TabIndex = 2;
             this.lblLoginClient.Text = "User";
-           
             // 
             // lblWebsite
             // 
@@ -125,6 +124,7 @@ namespace CourseMgtPage1
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(208, 469);
             this.pnlLeft.TabIndex = 0;
+            this.pnlLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLeft_Paint);
             // 
             // btnChangePwd
             // 

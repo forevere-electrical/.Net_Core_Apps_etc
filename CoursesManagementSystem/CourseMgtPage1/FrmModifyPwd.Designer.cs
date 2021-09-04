@@ -67,10 +67,11 @@ namespace CourseMgtPage1
             this.btnClose.Location = new System.Drawing.Point(183, 149);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(98, 34);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Cancel";
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSaveToDB
             // 
@@ -79,17 +80,19 @@ namespace CourseMgtPage1
             this.btnSaveToDB.Location = new System.Drawing.Point(64, 149);
             this.btnSaveToDB.Name = "btnSaveToDB";
             this.btnSaveToDB.Size = new System.Drawing.Size(98, 34);
-            this.btnSaveToDB.TabIndex = 2;
+            this.btnSaveToDB.TabIndex = 3;
             this.btnSaveToDB.Text = "Submit";
             this.btnSaveToDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaveToDB.UseVisualStyleBackColor = false;
+            this.btnSaveToDB.Click += new System.EventHandler(this.btnSaveToDB_Click);
             // 
             // txtConfirmNewPwd
             // 
             this.txtConfirmNewPwd.Location = new System.Drawing.Point(143, 118);
             this.txtConfirmNewPwd.Name = "txtConfirmNewPwd";
+            this.txtConfirmNewPwd.PasswordChar = '-';
             this.txtConfirmNewPwd.Size = new System.Drawing.Size(167, 22);
-            this.txtConfirmNewPwd.TabIndex = 1;
+            this.txtConfirmNewPwd.TabIndex = 2;
             // 
             // lblConfirmNewPwd
             // 
@@ -104,6 +107,7 @@ namespace CourseMgtPage1
             // 
             this.txtNewPwd.Location = new System.Drawing.Point(143, 78);
             this.txtNewPwd.Name = "txtNewPwd";
+            this.txtNewPwd.PasswordChar = '*';
             this.txtNewPwd.Size = new System.Drawing.Size(167, 22);
             this.txtNewPwd.TabIndex = 1;
             // 
@@ -120,8 +124,9 @@ namespace CourseMgtPage1
             // 
             this.txtOldPwd.Location = new System.Drawing.Point(143, 39);
             this.txtOldPwd.Name = "txtOldPwd";
+            this.txtOldPwd.PasswordChar = '*';
             this.txtOldPwd.Size = new System.Drawing.Size(167, 22);
-            this.txtOldPwd.TabIndex = 1;
+            this.txtOldPwd.TabIndex = 0;
             // 
             // lblOldPwd
             // 

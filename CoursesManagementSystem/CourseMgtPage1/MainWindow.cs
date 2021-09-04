@@ -17,6 +17,7 @@ namespace CourseMgtPage1
             
             InitializeComponent();
             this.lblLoginClient.Text = Program.currentTeacher.TeacherName;
+            this.btnTeacherManagement.Enabled = false;
         }
 
         #region Window Move by left mouse button draging
@@ -99,6 +100,9 @@ namespace CourseMgtPage1
             newPassword.Show();
         }
 
-     
+        private void pnlLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

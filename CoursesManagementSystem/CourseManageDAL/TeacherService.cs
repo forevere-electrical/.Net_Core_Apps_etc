@@ -39,5 +39,13 @@ namespace CourseManageDAL
             reader.Close();
             return teacher;
         }
+
+        public int ChangePwd(Teacher teacher, string newpassword)
+        {
+            string sql = $"update Teacher set LoginPWD='{newpassword}'";
+            sql += $" where TeacherId={teacher.TeacherId}";
+
+            return SQLHelper.Update(sql);
+        } 
     }
 }
