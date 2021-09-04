@@ -26,5 +26,10 @@ namespace CourseManageBLL
         {
             return courseService.ModifyCourse(course);
         }
+
+        public int delCourse(Course course)
+        {
+            return courseService.delCourse(course);
+        }
     }
 }

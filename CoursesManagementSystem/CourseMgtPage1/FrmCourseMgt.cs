@@ -134,5 +134,62 @@ namespace CourseMgtPage1
 
             this.cbbCategory_Modify.SelectedValue = course.CategoryId;
         }
+
+        private void btnDelCourse_Click(object sender, EventArgs e)
+        {
+            if (this.dgvCourseList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to update", "Notice:");
+                return;
+            }
+
+            //get courseId from the selected cells
+            int courseId = (int)this.dgvCourseList.CurrentRow.Cells["CourseId"].Value;
+
+            Course currentCourse = new Course();
+
+            currentCourse.CourseId = courseId;
+            DialogResult result = MessageBox.Show($"Are you sure to delete Course with ID={courseId}?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Question); ;
+            if (result == DialogResult.Cancel) return;
+            
+            courseManage.delCourse(currentCourse);
+            MessageBox.Show($"Course with ID={courseId} deleted!");
+
+            this.courseList.Remove(this.courseList.Where(c => c.CourseId == courseId).First());
+            //Sync course list in dgv
+            this.dgvCourseList.DataSource = null;
+            this.dgvCourseList.DataSource = this.courseList;
+            this.lblCount.Text = this.courseList.Count.ToString();    
+
+        }
+
+        private void btnSaevToDB_Click(object sender, EventArgs e)
+        {
+            //Before save to database, Data need to be cleaned and checked for validity.
+            Course course = new Course()
+            {
+                CourseName = this.txtCourseName_Modify.Text.Trim(),
+                CourseContent = this.txtDescription.Text.Trim(),
+                CourseHours = Convert.ToInt32(this.txtCourseHours.Text.Trim()),
+                CourseId = Convert.ToInt32(this.lblCourseId.Text),
+                TeacherId = Program.currentTeacher.TeacherId,
+                CategoryId = Convert.ToInt32(this.cbbCategory_Modify.SelectedValue),
+                Credit = Convert.ToInt32(this.txtCredit.Text),
+                CategoryName=this.cbbCategory_Modify.Text
+            };
+            // Save to DB
+            courseManage.ModifyCourse(course);
+            this.panelModify.Visible = false;
+            Course modifiedCourse = (from c in this.courseList where c.CourseId.Equals(course.CourseId) select c).First();
+           // modifiedCourse = course;
+
+            modifiedCourse.CourseName = course.CourseName;
+            modifiedCourse.CourseContent = course.CourseContent;
+            modifiedCourse.CourseHours = course.CourseHours;
+            modifiedCourse.Credit = course.Credit;
+            modifiedCourse.CategoryName = course.CategoryName;
+
+            this.dgvCourseList.Refresh();
+        }
     }
 }

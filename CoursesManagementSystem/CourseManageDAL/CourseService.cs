@@ -82,7 +82,7 @@ namespace CourseManageDAL
         /// <returns></returns>
         public int ModifyCourse(Course course)
         {
-            string sql = "update Course set CourseName=@CourseName, CourseContent=@CourseContent, CourseHours=@CourseHours, Credit=@Credit, CourseCategory=@CourseCategory ";
+            string sql = "update Course set CourseName=@CourseName, CourseContent=@CourseContent, CourseHours=@CourseHours, Credit=@Credit, CategoryId=@CategoryId ";
             sql += "where CourseId=@CourseId";
             SqlParameter[] param = new SqlParameter[] { 
                 new SqlParameter("@CourseName",course.CategoryName),
@@ -94,6 +94,12 @@ namespace CourseManageDAL
             };
 
             return SQLHelper.Update(sql, param);
+        }
+
+        public int delCourse(Course course)
+        {
+            string sql = "delete from Course where CourseId=" + course.CourseId;
+            return SQLHelper.Update(sql);
         }
     }
 }
