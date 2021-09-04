@@ -191,5 +191,15 @@ namespace CourseMgtPage1
 
             this.dgvCourseList.Refresh();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.panelModify.Visible = false;
+            this.txtCourseName_Modify.Text = "";
+            this.txtDescription.Text = "";
+            this.txtCredit.Text = "";
+            this.txtCourseHours.Text = "";
+            this.cbbCategory_Modify.SelectedIndex = -1;
+        }
     }
 }
