@@ -37,8 +37,10 @@ namespace CourseMgtPage1
                 return;
             }
             if(this.txtOldPwd.Text != Program.currentTeacher.LoginPWD)
+                // !Program.currentTeacher.LoginPWD.Equals(this.txtOldPwd.Text.Trim())
             {
                 MessageBox.Show("Old password does not match!");
+                this.txtOldPwd.Focus();
                 return;
             }
             if (this.txtNewPwd.Text.Length < 6 || this.txtNewPwd.Text.Length > 18)
@@ -49,9 +51,14 @@ namespace CourseMgtPage1
 
             // get basic query information
             string newPwd = this.txtNewPwd.Text;
+            Teacher teacher = new Teacher {
+                TeacherId = Program.currentTeacher.TeacherId,
+                LoginPWD = this.txtNewPwd.Text.Trim()
+            };
 
-            int result = teacherManage.ChangePwd(Program.currentTeacher, newPwd);
-            if(result > 0)
+
+            int result = teacherManage.ChangePwd(teacher);
+            if(result == 1)
             {
                 MessageBox.Show("Password changed!");
                 Program.currentTeacher.LoginPWD = newPwd;

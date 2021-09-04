@@ -39,13 +39,24 @@ namespace CourseManageDAL
             reader.Close();
             return teacher;
         }
-
-        public int ChangePwd(Teacher teacher, string newpassword)
+        /// <summary>
+        /// change login password
+        /// </summary>
+        /// <param name="teacher"></param>
+        /// <param name="newpassword"></param>
+        /// <returns></returns>
+        public int ChangePwd(Teacher teacher, string newpassword=null)
         {
-            string sql = $"update Teacher set LoginPWD='{newpassword}'";
-            sql += $" where TeacherId={teacher.TeacherId}";
+            // string sql = $"update Teacher set LoginPWD='{newpassword}'";
+            // sql += $" where TeacherId={teacher.TeacherId}";
 
-            return SQLHelper.Update(sql);
+            string sql = "update Teacher set LoginPWD=@LoginPWD where TeacherId=@TeacherId";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@LoginPWD", teacher.LoginPWD),
+                new SqlParameter("@TeacherId", teacher.TeacherId)
+            };
+            return SQLHelper.Update(sql,param);
         } 
     }
 }

@@ -16,9 +16,9 @@ namespace CourseManageBLL
             return teacherService.TeacherLogin(teacher);            
         }
 
-        public int ChangePwd(Teacher teacher, string newpassword)
+        public int ChangePwd(Teacher teacher)
         {
-            return teacherService.ChangePwd(teacher, newpassword);
+            return teacherService.ChangePwd(teacher);
         }
     }
 }
