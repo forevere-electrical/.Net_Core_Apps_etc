@@ -207,7 +207,7 @@ namespace LotteryPro
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(342, 32);
             this.lblStatus.TabIndex = 5;
-            this.lblStatus.Text = $"You picked {this.redBallsCount} Red Balls, {this.blueBallsCount} Blue Balls, Total {this.redBallsCount+this.blueBallsCount} Balls";
+            this.lblStatus.Text = "";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LotteryPro
