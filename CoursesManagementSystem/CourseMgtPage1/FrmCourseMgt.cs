@@ -18,7 +18,8 @@ namespace CourseMgtPage1
         private CourseCategoryManage courseCategoryManage = new CourseCategoryManage();
         private List<Course> courseList = null;     // a buffer to store multiple course query information
         private Course course = null;   // temp place to hold a selected course information
-
+        public frmMain.delegateAddNewCourseFrm openOtherForm;
+        
         public FrmCourseMgt()
         {
             InitializeComponent();
@@ -200,6 +201,11 @@ namespace CourseMgtPage1
             this.txtCredit.Text = "";
             this.txtCourseHours.Text = "";
             this.cbbCategory_Modify.SelectedIndex = -1;
+        }
+
+        private void btnAddCourse_Click(object sender, EventArgs e)
+        {
+            openOtherForm(new FrmAddCourse());
         }
     }
 }

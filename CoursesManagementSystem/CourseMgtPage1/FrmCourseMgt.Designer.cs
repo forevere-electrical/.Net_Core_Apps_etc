@@ -30,9 +30,9 @@ namespace CourseMgtPage1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCourseMgt));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPage = new System.Windows.Forms.Label();
             this.lblCourseMgt = new System.Windows.Forms.Label();
             this.btnAddCourse = new System.Windows.Forms.Button();
@@ -48,6 +48,12 @@ namespace CourseMgtPage1
             this.lblCount = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvCourseList = new System.Windows.Forms.DataGridView();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeacherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelModify = new System.Windows.Forms.Panel();
             this.gpbCourseInfo = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,12 +70,6 @@ namespace CourseMgtPage1
             this.lblCourseNo = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSaevToDB = new System.Windows.Forms.Button();
-            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeacherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
             this.panelModify.SuspendLayout();
             this.gpbCourseInfo.SuspendLayout();
@@ -107,6 +107,7 @@ namespace CourseMgtPage1
             this.btnAddCourse.Text = "Add Course";
             this.btnAddCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddCourse.UseVisualStyleBackColor = false;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // btnChangeCourse
             // 
@@ -236,18 +237,18 @@ namespace CourseMgtPage1
             // 
             this.dgvCourseList.AllowUserToAddRows = false;
             this.dgvCourseList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvCourseList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvCourseList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCourseList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvCourseList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCourseList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCourseList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCourseList.ColumnHeadersHeight = 30;
             this.dgvCourseList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CourseName,
@@ -268,6 +269,68 @@ namespace CourseMgtPage1
             this.dgvCourseList.Size = new System.Drawing.Size(663, 366);
             this.dgvCourseList.TabIndex = 7;
             this.dgvCourseList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseList_CellContentClick);
+            // 
+            // CourseName
+            // 
+            this.CourseName.DataPropertyName = "CourseName";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.CourseName.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.MinimumWidth = 6;
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
+            this.CourseName.Width = 114;
+            // 
+            // CourseHours
+            // 
+            this.CourseHours.DataPropertyName = "CourseHours";
+            this.CourseHours.HeaderText = "Course Hours";
+            this.CourseHours.MinimumWidth = 6;
+            this.CourseHours.Name = "CourseHours";
+            this.CourseHours.ReadOnly = true;
+            this.CourseHours.Width = 125;
+            // 
+            // Credit
+            // 
+            this.Credit.DataPropertyName = "Credit";
+            this.Credit.HeaderText = "Course Credit";
+            this.Credit.MinimumWidth = 6;
+            this.Credit.Name = "Credit";
+            this.Credit.ReadOnly = true;
+            this.Credit.Width = 125;
+            // 
+            // CourseContent
+            // 
+            this.CourseContent.DataPropertyName = "CourseContent";
+            this.CourseContent.HeaderText = "Description";
+            this.CourseContent.MinimumWidth = 6;
+            this.CourseContent.Name = "CourseContent";
+            this.CourseContent.ReadOnly = true;
+            this.CourseContent.Width = 125;
+            // 
+            // TeacherName
+            // 
+            this.TeacherName.DataPropertyName = "TeacherName";
+            this.TeacherName.HeaderText = "Teacher";
+            this.TeacherName.MinimumWidth = 6;
+            this.TeacherName.Name = "TeacherName";
+            this.TeacherName.ReadOnly = true;
+            this.TeacherName.Width = 125;
+            // 
+            // CourseId
+            // 
+            this.CourseId.DataPropertyName = "CourseId";
+            this.CourseId.HeaderText = "CourseId";
+            this.CourseId.MinimumWidth = 6;
+            this.CourseId.Name = "CourseId";
+            this.CourseId.ReadOnly = true;
+            this.CourseId.Visible = false;
+            this.CourseId.Width = 125;
             // 
             // panelModify
             // 
@@ -433,68 +496,6 @@ namespace CourseMgtPage1
             this.btnSaevToDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaevToDB.UseVisualStyleBackColor = false;
             this.btnSaevToDB.Click += new System.EventHandler(this.btnSaevToDB_Click);
-            // 
-            // CourseName
-            // 
-            this.CourseName.DataPropertyName = "CourseName";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.CourseName.DefaultCellStyle = dataGridViewCellStyle12;
-            this.CourseName.HeaderText = "Course Name";
-            this.CourseName.MinimumWidth = 6;
-            this.CourseName.Name = "CourseName";
-            this.CourseName.ReadOnly = true;
-            this.CourseName.Width = 114;
-            // 
-            // CourseHours
-            // 
-            this.CourseHours.DataPropertyName = "CourseHours";
-            this.CourseHours.HeaderText = "Course Hours";
-            this.CourseHours.MinimumWidth = 6;
-            this.CourseHours.Name = "CourseHours";
-            this.CourseHours.ReadOnly = true;
-            this.CourseHours.Width = 125;
-            // 
-            // Credit
-            // 
-            this.Credit.DataPropertyName = "Credit";
-            this.Credit.HeaderText = "Course Credit";
-            this.Credit.MinimumWidth = 6;
-            this.Credit.Name = "Credit";
-            this.Credit.ReadOnly = true;
-            this.Credit.Width = 125;
-            // 
-            // CourseContent
-            // 
-            this.CourseContent.DataPropertyName = "CourseContent";
-            this.CourseContent.HeaderText = "Description";
-            this.CourseContent.MinimumWidth = 6;
-            this.CourseContent.Name = "CourseContent";
-            this.CourseContent.ReadOnly = true;
-            this.CourseContent.Width = 125;
-            // 
-            // TeacherName
-            // 
-            this.TeacherName.DataPropertyName = "TeacherName";
-            this.TeacherName.HeaderText = "Teacher";
-            this.TeacherName.MinimumWidth = 6;
-            this.TeacherName.Name = "TeacherName";
-            this.TeacherName.ReadOnly = true;
-            this.TeacherName.Width = 125;
-            // 
-            // CourseId
-            // 
-            this.CourseId.DataPropertyName = "CourseId";
-            this.CourseId.HeaderText = "CourseId";
-            this.CourseId.MinimumWidth = 6;
-            this.CourseId.Name = "CourseId";
-            this.CourseId.ReadOnly = true;
-            this.CourseId.Visible = false;
-            this.CourseId.Width = 125;
             // 
             // FrmCourseMgt
             // 
