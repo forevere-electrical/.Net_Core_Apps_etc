@@ -15,6 +15,7 @@ namespace myDelegateApp
             weituo += callDelegate2;
             weituo += callDelegate3;
             weituo();
+            weituo.Invoke();
             Console.Read();
         }
 
