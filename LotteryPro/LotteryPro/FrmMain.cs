@@ -113,21 +113,21 @@ namespace LotteryPro
                     {
                         lbl.Tag = "1";              // set flag of balls' color to 1, means red color balls
                         lbl.Image = Image.FromFile("images/red.png");   //show red balls which was selected
-                        
+                        redBalls.Add(lbl.Text);
                     }
                     else    //balls from blue panel
                     {
                         lbl.Tag = "2";
-                        
+                        blueBalls.Add(lbl.Text);
                         lbl.Image = Image.FromFile("images/blue.png");
                     }
                     break;
                 case "1": //Balls already selected and color is red
-                    
+                    redBalls.Remove(lbl.Text);
                     resetColor(lbl);
                     break;
                 case "2": //Balls already selected and color is blue
-                    
+                    blueBalls.Remove(lbl.Text);
                     resetColor(lbl);
                     break;
                 default:
@@ -295,11 +295,17 @@ namespace LotteryPro
 
         private void confirmToDGV()
         {
+            if(this.redBalls.Count<6 || this.blueBalls.Count<1)
+            {
+                MessageBox.Show("Please select at least 6 red balls and at least 1 blue ball!");
+                return;
+            }
             mySelector.SelectedBalls.Add(new DoubleChromoSphere(this.redBalls, this.blueBalls));
             //show results
             this.dgvList.DataSource = null;
             this.dgvList.AutoGenerateColumns = false;
             this.dgvList.DataSource = mySelector.SelectedBalls;
+            this.dgvList.ClearSelection();
             //reset status information and selections
             clearBlue();
             clearRed();
