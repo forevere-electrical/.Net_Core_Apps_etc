@@ -17,7 +17,11 @@ namespace myDelegateApp
             weituo();
             Console.WriteLine("-----------Missing callDelegate2-------------");
             weituo -= callDelegate2;
-            weituo.Invoke();
+            weituo();
+            Console.WriteLine("-----------using delegateCall -------------");
+            delegateMethod delegateCall = new delegateMethod(callDelegate1);
+            delegateCall += callDelegate3;
+            delegateCall();
             Console.Read();
         }
 
