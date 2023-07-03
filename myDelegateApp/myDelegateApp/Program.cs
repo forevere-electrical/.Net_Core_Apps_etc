@@ -54,3 +54,54 @@ namespace myDelegateApp
 }
 
     
+FrmMainA.cs
+
+public partial class FrmMainA : Form
+{
+public FrmMainA{
+InitializeComponent();
+}
+private void btnCreateChildForm_Click(object sender, EventArgs e)
+{
+FrmChildB frmB = new FrmChildB();
+frmB.Show();
+
+// [4] 关联委托变量
+frmB.passMsg = ReceiveMsg;
+}
+
+//(2) 接收消息的方法
+// 引用
+public void ReceiveMsg(string msg)
+{
+this.txtContent.Text += "\r\n" + msg;
+}
+
+// [1] 声明委托
+public delegate void PassMsgDelegate(string msg);
+}
+
+
+FrmChildB.cs
+
+public partial class FrmChildB : Form
+{
+public FrmChildB(){
+// 引用
+    Initialize Component0;
+}
+// [3] 创建委托变量
+public PassMsgDelegate passMsg = null;
+
+//发送消息
+引用
+private void btnSend_Click(object sender, EventArgs e)
+{
+// [5] 使用委托变量传值
+passMsg(this.txtsendMsg.Text.Trim());
+}
+
+
+
+
+
